@@ -1,0 +1,49 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tcolorbox}
+\title{Assignment-1}
+\author{Adepu Vasisht}
+\date{CS20BTECH11002}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem 1.7}
+It is known that 10$\%$ of certain articles manufactured are defective. What is the probability that in a random sample of 12 such articles, 9 are defective?
+\section*{Solution 1.7}
+The repeated selections of articles in a random sample space are Bernoulli trials. Let $X$ denote the number of times of selecting defective articles in a random sample space of 12 articles.\\
+
+Clearly $X$, has a binomial distribution with n=12 and p=10\%=$\frac{1}{10}$=0.1
+and q=1-p=1-$\frac{1}{10}$=$\frac{9}{10}$\\
+
+$$\therefore X = B (n,p)$$
+
+The probability mass function(p.m.f) for a general binomial distribution is given by $$P[X=x]= {n \choose x} \times p^x\times q^{n-x}$$
+
+In this case n=12 , p=$\frac{1}{10}$ and q=$\frac{9}{10}$, So 
+$$p(x)={12 \choose x}\times(\frac{1}{10})^x\times(\frac{9}{10})^{12-x}$$
+where $p(x)$ is the probability of getting $x$ number of defective articles and $x\in \{0,1,2.......12\}$\\
+
+In this case we want $p(9)$ $$p(9)={12 \choose 9}\times(\frac{1}{10})^9\times(\frac{9}{10})^{3}$$
+$$=\frac{12!}{9!3!}\times\frac{1}{10^9}\times\frac{9^3}{10^3}$$
+
+$$=\frac{12\times11\times10}{3\times2\times1}\times\frac{729}{10^12}$$
+$$=\frac{16038}{10^{11}}$$
+So, the probability of there being 9 defective articles in a random sample space of 12 articles is $p(9)=1.6038x10^{-7}$ 
+
+
+\section*{Python code}
+Since the probability of producing 9 defective articles is very very low we need to run a large simulation. But a large simulation takes a large amount of time which is inefficient so we need to strike a balance between time and the precision to the original value. So a simulation of $4\times10^8$ would likely yield a better results in a better time\\
+The code can be downloaded from
+\begin{tcolorbox}{
+Vasishtadepu/AI5002/tree/main/Assignment1\\/Codes
+}
+\end{tcolorbox}
+
+
+
+
+\end{document}
